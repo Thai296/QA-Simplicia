@@ -1,0 +1,33 @@
+[
+   {
+      "exercice":"2020",
+      "nic":"344810825 00366",
+      "section":"01",
+      "risque":"703AD",
+      "bureau":"",
+      "ctn":"G",
+      "nns":"2000000118000 45 190320 700",
+      "nom":"TESTE",
+      "prenom":"PRMEIER",
+      "type":"MP",
+      "dateSinistre":"2019-03-20",
+      "dateNotification":"2020-05-25",
+      "nbJoursArret":5,
+      "niveauCcmIt":"1",
+      "tarifCcmIt":"228",
+      "dateNotificationIpDeces":null,
+      "pourcentIp":102,
+      "niveauCcmIp":"",
+      "tarifCcmIp":"",
+      "pourcentRctTiers":0,
+      "pourcentEtt":0,
+      "pourcentEut":0,
+      "valeurRisque":"228.0",
+      "regionCarsat":"75",
+      "siret":"34481082500366",
+      "craReferral":false,
+      "cmraReferral":false,
+      "sentToLawFirm":false,
+      "underStudy":false
+   }
+]
