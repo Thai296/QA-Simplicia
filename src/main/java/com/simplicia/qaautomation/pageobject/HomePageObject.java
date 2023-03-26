@@ -8,19 +8,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.simplicia.qaautomation.commons.BasePage;
 import com.simplicia.qaautomation.pageui.HomePageUI;
 
-public class HomePageObject extends BasePage{
+public class HomePageObject extends BasePage {
 	public HomePageObject(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 	}
-	
+
 	public void verifyAcceuilHeadingIsDisplayed() {
 		assertTrue(isElementDisplayed(HomePageUI.ACCEUIL_HEADING), "The Accueil should display");
 	}
-	
-	public void verifySimpliciaImgIsDisplayed() {
-		assertTrue(isElementDisplayed(HomePageUI.SIMPLICIA_IMG), "The Simplicia Img should display");
-	}
-	
+
 	public void logOut() {
 		clickToElement(HomePageUI.ACCEUIL_ROOT_MENU_ICON);
 		clickToElement(HomePageUI.DE_CONNECTER_BUTTON);
