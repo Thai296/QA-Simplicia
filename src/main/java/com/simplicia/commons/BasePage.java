@@ -118,10 +118,18 @@ public class BasePage {
 		return By.xpath(locator);
 	}
 
+	public By byCss(String locator) {
+		return By.cssSelector(locator);
+	}
+	
 	public WebElement findElementByXpath(String locator) {
 		return driver.findElement(byXpath(locator));
 	}
 
+	public WebElement findElementByCss(String locator) {
+		return driver.findElement(byCss(locator));
+	}
+	
 	public WebElement findElementByXpath(String locator, String... value) {
 		return driver.findElement(byXpath(castToObject(locator, value)));
 	}
@@ -134,6 +142,10 @@ public class BasePage {
 		findElementByXpath(locator).click();
 	}
 
+	public void clickToElementByCss(String locator) {
+		findElementByCss(locator).click();
+	}
+	
 	public void sendkeyToElement(String locator, String value) {
 		element = findElementByXpath(locator);
 		element.clear();
@@ -147,6 +159,12 @@ public class BasePage {
 		element.sendKeys(Keys.TAB);
 	}
 
+	public void sendkeyToElementByCss(String locator, String value) {
+		element = findElementByCss(locator);
+		element.clear();
+		element.sendKeys(value);
+	}
+	
 	public String getElementText(String locator) {
 		return findElementByXpath(locator).getText().trim();
 	}
