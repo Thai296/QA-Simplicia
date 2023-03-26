@@ -12,6 +12,7 @@ import com.simplicia.qaautomation.pageobject.LoginPageObject;
 public class LoginTests extends BaseTest {
 	private LoginPageObject loginPageObject;
 	private HomePageObject homePageObject;
+	private boolean logOut = false; 
 
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod() {
@@ -31,8 +32,7 @@ public class LoginTests extends BaseTest {
 	public void verifyTextsAreDisplayed() {
 		log.info("*** Starting verifyTextsAreDisplayed test case ***");
 
-		log.info(
-				"Step 1: Expected - Verify that 'Se connecter à votre compte' and 'Bienvenue' texts are displayed correctly");
+		log.info("Step 1: Expected - Verify that 'Se connecter à votre compte' and 'Bienvenue' texts are displayed correctly");
 		loginPageObject.verifyTextsAreDisplayed();
 	}
 
@@ -52,12 +52,19 @@ public class LoginTests extends BaseTest {
 		loginPageObject.verifySeConnecterButtonIsDisableIfNoInputData();
 	}
 
+	@Test(description = "Verify the Help Scout Beacon button is displayed at the bottom of page")
+	public void verifyHelpScoutBeaconButtonIsDisplayed() {
+		log.info("*** Starting verifyHelpScoutBeaconButtonIsDisplayed test case ***");
+
+		log.info("Step 1: Expected - Verify the Help Scout Beacon button is displayed at the bottom of page");
+		loginPageObject.verifyHelpScoutBeaconButtonIsDisplayed();
+	}
+	
 	@Test(description = "Verify the presence of 'email' and 'vpnkey' icons along with email and password fields respectively")
 	public void verifyEmailAndVpnkeyIconsAlongWithEmailAndPasswordFields() {
 		log.info("*** Starting verifyEmailAndVpnkeyIconsAlongWithEmailAndPasswordFields test case ***");
 
-		log.info(
-				"Step 1: Expected - Verify the presence of 'email' and 'vpnkey' icons along with email and password fields respectivel");
+		log.info("Step 1: Expected - Verify the presence of 'email' and 'vpnkey' icons along with email and password fields respectivel");
 		loginPageObject.verifyEmailAndVpnkeyIconsAlongWithEmailAndPasswordFields();
 	}
 
@@ -95,9 +102,9 @@ public class LoginTests extends BaseTest {
 		loginPageObject.verifyEmailAndPasswordFieldsAreDisplayed();
 		loginPageObject.verifyEmailAndVpnkeyIconsAlongWithEmailAndPasswordFields();
 		loginPageObject.verifySeConnecterButtonIsDisableIfNoInputData();
-		loginPageObject.verifyHSBeaconContainerFrameIsDisPlay();
+		loginPageObject.verifyHelpScoutBeaconButtonIsDisplayed();
 
-		log.info("Step 2: Action - Input email and password datas");
+		log.info("Step 2: Action - Input email, password datas and click [Se Connecter] button");
 		loginPageObject.inputEmail();
 		loginPageObject.inputPassword();
 		loginPageObject.clickSeConnecterButton();
@@ -105,14 +112,19 @@ public class LoginTests extends BaseTest {
 		log.info("Step 2: Expected - Verify the user is login the application successful");
 		homePageObject.verifyAcceuilHeadingIsDisplayed();
 		homePageObject.verifySimpliciaImgIsDisplayed();
+		logOut = true;
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void afterMethod() {
 		try {
-			log.info("*** Starting log out the account ***");
-			homePageObject.logOut();
-			log.info("*** Logout the account successful ***");
+			
+			if (logOut) {
+				log.info("*** Starting log out the account ***");
+				homePageObject.logOut();
+				log.info("*** Logout the account successful ***");
+			}
+			
 		} catch (Exception e) {
 			log.debug("*** Failing when log out the account ***", e);
 		}
