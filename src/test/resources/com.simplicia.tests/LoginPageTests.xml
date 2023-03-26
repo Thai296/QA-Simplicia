@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Login Page Tests" preserve-order="true" parallel="tests" thread-count = "1" verbose = "1">
+
+	<test name="Verify simplicia logo is displayed">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifySimpliciaLogoIsDisplayed"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify that 'Se connecter à votre compte' and 'Bienvenue' texts are displayed correctly">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyTextsAreDisplayed"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify that email and password fields are displayed">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyEmailAndPasswordFieldsAreDisplayed"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify the Help Scout Beacon button is displayed at the bottom of page">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyHelpScoutBeaconButtonIsDisplayed"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify that 'Se Connecter' button is disabled if no input data">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifySeConnecterButtonIsDisableIfNoInputData"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify the presence of 'email' and 'vpnkey' icons along with email and password fields respectively">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyEmailAndVpnkeyIconsAlongWithEmailAndPasswordFields"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify that user is able to fill data into email and password text fields">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyEmailAndPasswordTextCanFillDatas"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify the Se Connecter button is enabled after input email and password">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifySeConnecterButtonEnabledAfterInputEmailAndPassword"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+	<test name="Verify the user is login the application successful">
+		<classes>
+			<class name="com.simplicia.tests.LoginPageTests">
+				<methods>
+					<include name="verifyLoginSuccessful"></include>
+			</methods> 
+			</class>
+		</classes>
+	</test>
+</suite>

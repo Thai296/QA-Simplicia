@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Simplicia Tests" preserve-order="true" parallel="tests" thread-count = "1" verbose = "1">
+	<suite-files>
+		<suite-file path = "LoginPageTests.xml"/>
+		<suite-file path = "HomePageTests.xml"/>
+	</suite-files>
+</suite> 
