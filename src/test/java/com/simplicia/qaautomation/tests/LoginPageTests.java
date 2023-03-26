@@ -5,11 +5,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.simplicia.qaautomation.commons.BaseTest;
+import com.simplicia.qaautomation.commons.GlobalConstants;
 import com.simplicia.qaautomation.commons.PageManagerFactory;
 import com.simplicia.qaautomation.pageobject.HomePageObject;
 import com.simplicia.qaautomation.pageobject.LoginPageObject;
 
-public class LoginTests extends BaseTest {
+public class LoginPageTests extends BaseTest {
 	private LoginPageObject loginPageObject;
 	private HomePageObject homePageObject;
 	private boolean logOut = false; 
@@ -73,8 +74,11 @@ public class LoginTests extends BaseTest {
 		log.info("*** Starting verifyEmailAndPasswordTextCanFillDatas test case ***");
 
 		log.info("Step 2: Action - Input email and password datas");
-		String emailInput = loginPageObject.inputEmail();
-		String passwordInput = loginPageObject.inputPassword();
+		String emailInput = properties.getProperty(GlobalConstants.EMAIL);
+		loginPageObject.inputEmail(emailInput);
+		
+		String passwordInput = properties.getProperty(GlobalConstants.PASSWORD);
+		loginPageObject.inputPassword(passwordInput);
 
 		log.info("Step 2: Expected - Verify that user is able to fill data into email and password text fields");
 		loginPageObject.verifyEmailAndPasswordTextCanFillDatas(emailInput, passwordInput);
@@ -85,8 +89,8 @@ public class LoginTests extends BaseTest {
 		log.info("*** Starting verifySeConnecterButtonEnabledAfterInputEmailAndPassword test case ***");
 
 		log.info("Step 2: Action - Input email and password datas");
-		loginPageObject.inputEmail();
-		loginPageObject.inputPassword();
+		loginPageObject.inputEmail(properties.getProperty(GlobalConstants.EMAIL));
+		loginPageObject.inputPassword(properties.getProperty(GlobalConstants.PASSWORD));
 
 		log.info("Step 2: Expected - Verify the Se Connecter button is enabled after input email and password");
 		loginPageObject.verifySeConnecterButtonEnabledAfterInputEmailAndPassword();
@@ -105,9 +109,7 @@ public class LoginTests extends BaseTest {
 		loginPageObject.verifyHelpScoutBeaconButtonIsDisplayed();
 
 		log.info("Step 2: Action - Input email, password datas and click [Se Connecter] button");
-		loginPageObject.inputEmail();
-		loginPageObject.inputPassword();
-		loginPageObject.clickSeConnecterButton();
+		loginPageObject.loginToLoginPage(properties.getProperty(GlobalConstants.EMAIL), properties.getProperty(GlobalConstants.PASSWORD));
 
 		log.info("Step 2: Expected - Verify the user is login the application successful");
 		homePageObject.verifyAcceuilHeadingIsDisplayed();
