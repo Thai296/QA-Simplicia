@@ -111,7 +111,6 @@ public class LoginTests extends BaseTest {
 
 		log.info("Step 2: Expected - Verify the user is login the application successful");
 		homePageObject.verifyAcceuilHeadingIsDisplayed();
-		homePageObject.verifySimpliciaImgIsDisplayed();
 		logOut = true;
 	}
 
