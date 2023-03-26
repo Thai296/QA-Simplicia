@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 	<name>QA-Simplicia</name>
 	<url>http://maven.apache.org</url>
-	<!-- Khai báo biến - Global Variable -->
+	<!-- Global Variable -->
 	<properties>
 		<!-- Encoding for Build/ Console -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,7 +21,7 @@
 		<testng.version>7.4.0</testng.version>
 		<webdrivermanager.version>5.1.0</webdrivermanager.version>
 	</properties>
-	<!-- Quản lí thư viện -->
+	<!-- Manage Libary -->
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -84,7 +84,7 @@
 				<configuration>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<file>src/test/resources/com.bankguru.qaautomation.tests/NewCustomerTest.xml</file>
+						<file>src/test/resources/com.simplicia.qaautomation.tests/SimpliciaTests.xml</file>
 					</suiteXmlFiles>
 
 					<!-- Argument -->

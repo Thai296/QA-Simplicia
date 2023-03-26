@@ -77,7 +77,7 @@ public class LoginPageObject extends BasePage {
 		assertTrue(isElementDisplayed(LoginPageUI.VPN_KEY_ICON), "The vpn key icon should display");
 	}
 	
-	public void verifyHSBeaconContainerFrameIsDisPlay() {
+	public void verifyHelpScoutBeaconButtonIsDisplayed() {
 		switchToFrame(findElementByXpath(LoginPageUI.HELP_SCOUT_BEACON_FRAME));
 		assertTrue(isElementDisplayed(LoginPageUI.HELP_SCOUT_BEACON_BUTTON), "The HSBeaconContainerFrame button should display");
 		switchToDefaultFrame();
