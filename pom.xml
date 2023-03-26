@@ -84,7 +84,7 @@
 				<configuration>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<file>src/test/resources/com.simplicia.qaautomation.tests/SimpliciaTests.xml</file>
+						<file>src/test/resources/com.simplicia.tests/SimpliciaTests.xml</file>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
