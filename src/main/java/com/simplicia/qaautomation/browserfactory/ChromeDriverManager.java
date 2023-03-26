@@ -17,10 +17,10 @@ public class ChromeDriverManager extends DriverManager {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
-		options.setExperimentalOption("useAutomationExtension", false);
+		
 		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 		
-		
+		options.addArguments("--enable-javascript"); 
 		options.addArguments("--incognito");
 		options.addArguments("--start-maximized");
 		options.addArguments("--disable-popup-blocking");
