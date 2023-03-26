@@ -21,4 +21,8 @@ public class HomePageObject extends BasePage {
 		clickToElement(HomePageUI.ACCEUIL_ROOT_MENU_ICON);
 		clickToElement(HomePageUI.DE_CONNECTER_BUTTON);
 	}
+	
+	public void verifyFooterIsDisplayed() {
+		assertTrue(isElementDisplayed(HomePageUI.WEB_FOOTER), "The footer should display");
+	}
 }

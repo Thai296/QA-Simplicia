@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -31,6 +32,7 @@ public class BaseTest {
 	protected ConfigurationLoader configLoaded;
 	protected DriverManager driverManager;
 	protected MenuNavigation menuNavigate;
+	protected Properties properties;
 
 	protected static final int timeOut = 30;
 	protected Logger log = Logger.getLogger(getClass());
@@ -38,9 +40,9 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void setUp() throws Exception {
 		configLoaded = new ConfigurationLoader();
-
+		properties = configLoaded.loadConfiguration();
 		driverManager = BrowserManagerFactory
-				.getBrowser(configLoaded.loadConfiguration().getProperty(GlobalConstants.BROWSER));
+				.getBrowser(properties.getProperty(GlobalConstants.BROWSER));
 		driver = driverManager.getDriver();
 
 		wait = new WebDriverWait(driver, timeOut);
