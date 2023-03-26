@@ -86,13 +86,7 @@
 					<suiteXmlFiles>
 						<file>src/test/resources/com.simplicia.qaautomation.tests/SimpliciaTests.xml</file>
 					</suiteXmlFiles>
-
-					<!-- Argument -->
-					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-					</argLine>
 				</configuration>
-				
 			</plugin>
 		</plugins>
 	</build>
